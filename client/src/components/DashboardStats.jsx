@@ -25,27 +25,27 @@ export default function DashboardStats() {
       title: 'Total Tasks',
       value: total,
       icon: ClipboardList,
-      colorClass: 'text-zinc-100 bg-zinc-900 border-zinc-800',
+      colorClass: 'text-zinc-300 bg-[#171C1A]/50 border-[#242D2A]',
     },
     {
       title: 'Active Tasks',
       value: active,
       icon: Play,
-      colorClass: 'text-zinc-300 bg-zinc-900 border-zinc-800',
+      colorClass: 'text-[#34D399] bg-[#34D399]/5 border-[#34D399]/15',
     },
     {
       title: 'Completed',
       value: completed,
       icon: CheckCircle2,
-      colorClass: 'text-white bg-zinc-900 border-zinc-800',
+      colorClass: 'text-[#10B981] bg-[#10B981]/10 border-[#10B981]/25 font-bold',
     },
     {
       title: 'Overdue',
       value: overdue,
       icon: AlertTriangle,
       colorClass: overdue > 0 
-        ? 'text-white bg-zinc-900 border-zinc-700 font-bold' 
-        : 'text-zinc-500 bg-zinc-900 border-zinc-850',
+        ? 'text-rose-400 bg-rose-500/10 border-rose-500/25 font-semibold' 
+        : 'text-zinc-500 bg-[#171C1A]/20 border-[#242D2A]',
     },
   ];
 
@@ -56,12 +56,12 @@ export default function DashboardStats() {
         return (
           <div
             key={i}
-            className="glass-panel rounded-2xl p-5 border relative overflow-hidden transition-all duration-300 hover:border-zinc-700"
+            className="glass-panel rounded-2xl p-5 border relative overflow-hidden transition-all duration-305 hover:border-[#2E3A36]"
             role="status"
             aria-live="polite"
           >
             <div className="flex items-center justify-between mb-3 relative z-10">
-              <span className="text-zinc-400 text-xs md:text-sm font-medium tracking-wide uppercase">
+              <span className="text-zinc-450 text-xs md:text-sm font-medium tracking-wide uppercase">
                 {stat.title}
               </span>
               <div className={`p-2 rounded-xl border ${stat.colorClass}`}>

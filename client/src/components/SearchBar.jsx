@@ -36,7 +36,7 @@ export default function SearchBar() {
         id="task-search"
         ref={inputRef}
         type="text"
-        className="w-full glass-panel pl-11 pr-12 py-3 rounded-xl border border-zinc-850 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-zinc-800/50 focus:border-zinc-600 transition-all duration-200 text-sm md:text-base bg-zinc-950/20"
+        className="w-full glass-panel pl-11 pr-12 py-3 rounded-xl border border-[#242D2A] text-white placeholder-[#8A9590]/50 focus:outline-none focus:ring-2 focus:ring-[#10B981]/20 focus:border-[#10B981] transition-all duration-200 text-sm md:text-base bg-zinc-950/20"
         placeholder="Search tasks by title... (Press '/' to focus)"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
@@ -53,7 +53,7 @@ export default function SearchBar() {
         </button>
       ) : (
         <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none hidden md:flex" aria-hidden="true">
-          <kbd className="px-1.5 py-0.5 text-[10px] font-semibold text-zinc-500 bg-zinc-900 border border-zinc-800 rounded-md">
+          <kbd className="px-1.5 py-0.5 text-[10px] font-semibold text-zinc-500 bg-[#0B0F0E] border border-[#242D2A] rounded-md">
             /
           </kbd>
         </div>

@@ -137,8 +137,8 @@ export default function TaskModal({ isOpen, onClose, task }) {
           {/* Title Field */}
           <div>
             <label htmlFor="task-title" className="block text-sm font-semibold text-zinc-350 mb-1.5 flex items-center gap-1.5">
-              <FileText size={16} className="text-zinc-500" />
-              <span>Title <span className="text-white">*</span></span>
+              <FileText size={16} className="text-[#10B981]" />
+              <span>Title <span className="text-[#10B981]">*</span></span>
             </label>
             <input
               id="task-title"
@@ -146,7 +146,7 @@ export default function TaskModal({ isOpen, onClose, task }) {
               className={`w-full glass-panel px-4 py-2.5 rounded-xl border text-white placeholder-zinc-600 focus:outline-none focus:ring-2 transition-all duration-205 text-sm bg-zinc-950/20 ${
                 errors.title
                   ? 'border-rose-500/50 focus:ring-rose-500/30 focus:border-rose-500'
-                  : 'border-zinc-850 focus:ring-zinc-800/50 focus:border-zinc-650'
+                  : 'border-[#242D2A] focus:ring-[#10B981]/25 focus:border-[#10B981]'
               }`}
               placeholder="e.g. Complete presentation review"
               value={title}
@@ -174,7 +174,7 @@ export default function TaskModal({ isOpen, onClose, task }) {
             <textarea
               id="task-desc"
               rows={3}
-              className="w-full glass-panel px-4 py-2.5 rounded-xl border border-zinc-850 text-white placeholder-zinc-650 focus:outline-none focus:ring-2 focus:ring-zinc-800/50 focus:border-zinc-650 transition-all duration-205 text-sm resize-none bg-zinc-950/20"
+              className="w-full glass-panel px-4 py-2.5 rounded-xl border border-[#242D2A] text-white placeholder-zinc-650 focus:outline-none focus:ring-2 focus:ring-[#10B981]/25 focus:border-[#10B981] transition-all duration-205 text-sm resize-none bg-zinc-950/20"
               placeholder="Describe what needs to be done..."
               value={description}
               onChange={(e) => setDescription(e.target.value)}
@@ -190,7 +190,7 @@ export default function TaskModal({ isOpen, onClose, task }) {
             <input
               id="task-due"
               type="date"
-              className="w-full glass-panel px-4 py-2.5 rounded-xl border border-zinc-850 text-white placeholder-zinc-650 focus:outline-none focus:ring-2 focus:ring-zinc-800/50 focus:border-zinc-650 transition-all duration-205 text-sm bg-zinc-950/20"
+              className="w-full glass-panel px-4 py-2.5 rounded-xl border border-[#242D2A] text-white placeholder-zinc-650 focus:outline-none focus:ring-2 focus:ring-[#10B981]/25 focus:border-[#10B981] transition-all duration-205 text-sm bg-zinc-950/20"
               value={dueDate}
               onChange={(e) => setDueDate(e.target.value)}
             />
@@ -201,13 +201,13 @@ export default function TaskModal({ isOpen, onClose, task }) {
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-2 rounded-xl bg-zinc-900 hover:bg-zinc-850 border border-zinc-800 text-zinc-300 font-semibold text-sm transition-all duration-200"
+              className="px-4 py-2 rounded-xl bg-[#171C1A] hover:bg-[#1B211F] border border-[#242D2A] text-zinc-350 font-semibold text-sm transition-all duration-205"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="px-5 py-2 bg-white hover:bg-zinc-200 text-black font-bold text-sm rounded-xl transition-all duration-200"
+              className="px-5 py-2 bg-[#10B981] hover:bg-[#34D399] text-[#0B0F0E] font-bold text-sm rounded-xl transition-all duration-200"
             >
               {task ? 'Save Changes' : 'Create Task'}
             </button>

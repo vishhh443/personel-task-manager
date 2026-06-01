@@ -28,16 +28,16 @@ export default function FilterTabs() {
             onClick={() => setFilter(tab.id)}
             className={`flex items-center justify-center gap-2 flex-1 md:flex-none px-4 md:px-6 py-2.5 rounded-lg text-sm font-semibold tracking-wide transition-all duration-200 ${
               isActive
-                ? 'bg-white text-black shadow-md shadow-white/5'
-                : 'text-zinc-400 hover:text-white hover:bg-zinc-900/50'
+                ? 'bg-[#10B981] text-[#0B0F0E] shadow-md shadow-[#10B981]/10'
+                : 'text-zinc-400 hover:text-white hover:bg-[#171C1A]/50'
             }`}
           >
             <span>{tab.label}</span>
             <span
               className={`text-xs px-2 py-0.5 rounded-full font-bold transition-all duration-200 ${
                 isActive
-                  ? 'bg-zinc-250 text-black'
-                  : 'bg-zinc-900 text-zinc-500'
+                  ? 'bg-[#0B0F0E]/30 text-[#0e5d42]'
+                  : 'bg-[#0B0F0E] text-zinc-500'
               }`}
             >
               {tab.count}

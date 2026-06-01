@@ -8,32 +8,32 @@
 
 body {
   font-family: var(--font-sans);
-  background-color: #000000; /* Matte true black */
-  color: #FFFFFF; /* Pure white */
+  background-color: #0B0F0E; /* Ultra-dark slate green */
+  color: #FFFFFF; /* Stark white */
   min-height: 100vh;
   overflow-x: hidden;
 }
 
-/* Custom scrollbar optimized for monochromatic contrast */
+/* Botanical tech scrollbars */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #000000;
+  background: #0B0F0E;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #27272A; /* Slate zinc gray */
+  background: #242D2A; /* Dark sage-gray */
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #3F3F46;
+  background: #2E3A36;
 }
 
-/* Shimmer animation for skeleton loader in monochrome */
+/* Shimmer animation for skeleton loader */
 @keyframes shimmer {
   0% {
     background-position: -200% 0;
@@ -46,25 +46,26 @@ body {
 .animate-shimmer {
   background: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 0.01) 25%,
-    rgba(255, 255, 255, 0.04) 50%,
-    rgba(255, 255, 255, 0.01) 75%
+    rgba(16, 185, 129, 0.01) 25%,
+    rgba(16, 185, 129, 0.04) 50%,
+    rgba(16, 185, 129, 0.01) 75%
   );
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite linear;
 }
 
-/* Clean, graphite-based panels */
+/* Graphite botanical cards */
 .glass-panel {
-  background-color: #161616; /* Deep graphite */
-  border: 1px solid #27272A; /* Zinc-800 border */
+  background-color: #171C1A; /* Dark graphite green */
+  border: 1px solid #242D2A; /* Soft sage border */
   transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), 
               border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), 
-              background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+              background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .glass-panel-hover:hover {
-  background-color: #1A1A1A;
-  border-color: #3F3F46;
+  background-color: #1B211F;
+  border-color: #2E3A36;
   transform: translateY(-1px);
 }

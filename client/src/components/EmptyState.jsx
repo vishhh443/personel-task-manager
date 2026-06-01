@@ -14,7 +14,7 @@ export default function EmptyState({ onCreateClick }) {
 
   return (
     <div className="flex flex-col items-center justify-center p-8 md:p-12 glass-panel rounded-2xl text-center max-w-lg mx-auto mt-6">
-      <div className="p-4 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-300 mb-6 animate-pulse">
+      <div className="p-4 rounded-full bg-[#171C1A] border border-[#242D2A] text-[#10B981] mb-6 animate-pulse">
         {isSearchOrFilterActive ? (
           <Inbox size={40} className="stroke-[1.5]" />
         ) : (
@@ -36,7 +36,7 @@ export default function EmptyState({ onCreateClick }) {
         <button
           type="button"
           onClick={handleReset}
-          className="flex items-center gap-2 px-5 py-2.5 bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-white text-sm font-semibold rounded-xl transition-all duration-200"
+          className="flex items-center gap-2 px-5 py-2.5 bg-[#171C1A] border border-[#242D2A] hover:border-[#2E3A36] text-white text-sm font-semibold rounded-xl transition-all duration-200"
         >
           <RefreshCw size={16} />
           <span>Reset Filters & Search</span>
@@ -45,7 +45,7 @@ export default function EmptyState({ onCreateClick }) {
         <button
           type="button"
           onClick={onCreateClick}
-          className="px-6 py-3 bg-white hover:bg-zinc-200 text-black font-bold text-sm rounded-xl transition-all duration-200 active:scale-95 focus:outline-none focus:ring-2 focus:ring-zinc-500"
+          className="px-6 py-3 bg-[#10B981] hover:bg-[#34D399] text-[#0B0F0E] font-bold text-sm rounded-xl transition-all duration-200 active:scale-95 focus:outline-none focus:ring-2 focus:ring-[#10B981]"
         >
           Create Your First Task
         </button>

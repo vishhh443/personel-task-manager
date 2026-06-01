@@ -44,7 +44,7 @@ export default function ConfirmDialog({ isOpen, onClose, onConfirm, title, messa
         className="glass-panel w-full max-w-md rounded-2xl border border-white/10 p-6 shadow-2xl relative z-10 animate-in fade-in zoom-in-95 duration-200"
       >
         <div className="flex gap-4">
-          <div className="p-3 h-fit rounded-xl bg-zinc-900 border border-zinc-800 text-white">
+          <div className="p-3 h-fit rounded-xl bg-[#171C1A] border border-[#242D2A] text-white">
             <AlertOctagon size={24} className="stroke-[2]" />
           </div>
 
@@ -61,14 +61,14 @@ export default function ConfirmDialog({ isOpen, onClose, onConfirm, title, messa
                 type="button"
                 data-autofocus
                 onClick={onClose}
-                className="px-4 py-2 rounded-xl bg-zinc-900 hover:bg-zinc-850 border border-zinc-800 text-zinc-300 font-semibold text-sm transition-all duration-200"
+                className="px-4 py-2 rounded-xl bg-[#171C1A] hover:bg-[#1B211F] border border-[#242D2A] text-zinc-300 font-semibold text-sm transition-all duration-205"
               >
                 Cancel
               </button>
               <button
                 type="button"
                 onClick={onConfirm}
-                className="px-4 py-2 rounded-xl bg-white hover:bg-zinc-200 text-black font-bold text-sm transition-all duration-200"
+                className="px-4 py-2 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-semibold text-sm transition-all duration-200"
               >
                 Delete Task
               </button>

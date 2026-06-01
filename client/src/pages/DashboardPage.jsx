@@ -49,17 +49,17 @@ export default function DashboardPage() {
   return (
     <div className="w-full min-h-screen px-4 md:px-8 py-8 md:py-12 max-w-6xl mx-auto flex flex-col gap-6 relative">
       {/* Header Block */}
-      <header className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-zinc-800 relative z-10">
+      <header className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-[#242D2A] relative z-10">
         <div className="flex items-center gap-3">
-          <div className="p-3 rounded-2xl bg-zinc-900 border border-zinc-800 text-white shadow-inner">
+          <div className="p-3 rounded-2xl bg-[#171C1A] border border-[#242D2A] text-[#10B981] shadow-inner">
             <CheckSquare size={32} className="stroke-[2.25]" />
           </div>
           <div>
             <h1 className="text-2xl md:text-3xl font-extrabold text-white tracking-tight flex items-center gap-2">
               <span>TaskFlow</span>
-              <span className="text-xs font-bold text-zinc-300 bg-zinc-850 border border-zinc-700 px-2 py-0.5 rounded-full uppercase tracking-wider flex items-center gap-1">
+              <span className="text-xs font-bold text-[#10B981] bg-[#10B981]/10 border border-[#10B981]/25 px-2 py-0.5 rounded-full uppercase tracking-wider flex items-center gap-1">
                 <Sparkles size={10} />
-                <span>Monochrome</span>
+                <span>Botanical Tech</span>
               </span>
             </h1>
             <p className="text-zinc-400 text-xs md:text-sm mt-0.5 font-medium">
@@ -71,7 +71,7 @@ export default function DashboardPage() {
         <button
           type="button"
           onClick={handleCreateClick}
-          className="flex items-center justify-center gap-2 px-5 py-3 bg-white hover:bg-zinc-200 text-black font-bold text-sm rounded-xl transition-all duration-200 active:scale-95 focus:outline-none focus:ring-2 focus:ring-zinc-500"
+          className="flex items-center justify-center gap-2 px-5 py-3 bg-[#10B981] hover:bg-[#34D399] text-[#0B0F0E] font-bold text-sm rounded-xl transition-all duration-200 active:scale-95 shadow-md shadow-[#10B981]/15 focus:outline-none focus:ring-2 focus:ring-[#10B981]"
         >
           <Plus size={18} />
           <span>New Task</span>
@@ -84,7 +84,7 @@ export default function DashboardPage() {
       </section>
 
       {/* Controls Bar: Search & Tabs */}
-      <section aria-label="Task search and filters" className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 bg-zinc-900/40 glass-panel p-4 rounded-2xl">
+      <section aria-label="Task search and filters" className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 bg-[#171C1A]/40 glass-panel p-4 rounded-2xl">
         <div className="flex-1 max-w-md">
           <SearchBar />
         </div>
