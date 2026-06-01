@@ -26,18 +26,18 @@ export default function FilterTabs() {
             aria-controls="task-list-container"
             id={`filter-tab-${tab.id}`}
             onClick={() => setFilter(tab.id)}
-            className={`flex items-center justify-center gap-2 flex-1 md:flex-none px-4 md:px-6 py-2.5 rounded-lg text-sm font-medium tracking-wide transition-all duration-300 ${
+            className={`flex items-center justify-center gap-2 flex-1 md:flex-none px-4 md:px-6 py-2.5 rounded-lg text-sm font-semibold tracking-wide transition-all duration-200 ${
               isActive
-                ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/20'
-                : 'text-gray-400 hover:text-white hover:bg-white/5'
+                ? 'bg-white text-black shadow-md shadow-white/5'
+                : 'text-zinc-400 hover:text-white hover:bg-zinc-900/50'
             }`}
           >
             <span>{tab.label}</span>
             <span
-              className={`text-xs px-2 py-0.5 rounded-full font-semibold transition-all duration-300 ${
+              className={`text-xs px-2 py-0.5 rounded-full font-bold transition-all duration-200 ${
                 isActive
-                  ? 'bg-indigo-700 text-indigo-100'
-                  : 'bg-white/5 text-gray-400 group-hover:text-white'
+                  ? 'bg-zinc-250 text-black'
+                  : 'bg-zinc-900 text-zinc-500'
               }`}
             >
               {tab.count}

@@ -136,17 +136,17 @@ export default function TaskModal({ isOpen, onClose, task }) {
         <form onSubmit={handleSubmit} className="space-y-4">
           {/* Title Field */}
           <div>
-            <label htmlFor="task-title" className="block text-sm font-medium text-gray-300 mb-1.5 flex items-center gap-1.5">
-              <FileText size={16} className="text-gray-400" />
-              <span>Title <span className="text-indigo-400">*</span></span>
+            <label htmlFor="task-title" className="block text-sm font-semibold text-zinc-350 mb-1.5 flex items-center gap-1.5">
+              <FileText size={16} className="text-zinc-500" />
+              <span>Title <span className="text-white">*</span></span>
             </label>
             <input
               id="task-title"
               type="text"
-              className={`w-full glass-panel px-4 py-2.5 rounded-xl border text-white placeholder-gray-500 focus:outline-none focus:ring-2 transition-all duration-200 text-sm ${
+              className={`w-full glass-panel px-4 py-2.5 rounded-xl border text-white placeholder-zinc-600 focus:outline-none focus:ring-2 transition-all duration-205 text-sm bg-zinc-950/20 ${
                 errors.title
-                  ? 'border-rose-500/50 focus:ring-rose-500/40 focus:border-rose-500'
-                  : 'border-white/10 focus:ring-indigo-500/50 focus:border-indigo-500'
+                  ? 'border-rose-500/50 focus:ring-rose-500/30 focus:border-rose-500'
+                  : 'border-zinc-850 focus:ring-zinc-800/50 focus:border-zinc-650'
               }`}
               placeholder="e.g. Complete presentation review"
               value={title}
@@ -159,7 +159,7 @@ export default function TaskModal({ isOpen, onClose, task }) {
               autoComplete="off"
             />
             {errors.title && (
-              <p className="mt-1 text-xs text-rose-400 font-medium" role="alert">
+              <p className="mt-1 text-xs text-rose-450 font-medium" role="alert">
                 {errors.title}
               </p>
             )}
@@ -167,14 +167,14 @@ export default function TaskModal({ isOpen, onClose, task }) {
 
           {/* Description Field */}
           <div>
-            <label htmlFor="task-desc" className="block text-sm font-medium text-gray-300 mb-1.5 flex items-center gap-1.5">
-              <AlignLeft size={16} className="text-gray-400" />
+            <label htmlFor="task-desc" className="block text-sm font-semibold text-zinc-350 mb-1.5 flex items-center gap-1.5">
+              <AlignLeft size={16} className="text-zinc-500" />
               <span>Description</span>
             </label>
             <textarea
               id="task-desc"
               rows={3}
-              className="w-full glass-panel px-4 py-2.5 rounded-xl border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500 transition-all duration-200 text-sm resize-none"
+              className="w-full glass-panel px-4 py-2.5 rounded-xl border border-zinc-850 text-white placeholder-zinc-650 focus:outline-none focus:ring-2 focus:ring-zinc-800/50 focus:border-zinc-650 transition-all duration-205 text-sm resize-none bg-zinc-950/20"
               placeholder="Describe what needs to be done..."
               value={description}
               onChange={(e) => setDescription(e.target.value)}
@@ -183,31 +183,31 @@ export default function TaskModal({ isOpen, onClose, task }) {
 
           {/* Due Date Field */}
           <div>
-            <label htmlFor="task-due" className="block text-sm font-medium text-gray-300 mb-1.5 flex items-center gap-1.5">
-              <Calendar size={16} className="text-gray-400" />
+            <label htmlFor="task-due" className="block text-sm font-semibold text-zinc-350 mb-1.5 flex items-center gap-1.5">
+              <Calendar size={16} className="text-zinc-500" />
               <span>Due Date</span>
             </label>
             <input
               id="task-due"
               type="date"
-              className="w-full glass-panel px-4 py-2.5 rounded-xl border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500 transition-all duration-200 text-sm"
+              className="w-full glass-panel px-4 py-2.5 rounded-xl border border-zinc-850 text-white placeholder-zinc-650 focus:outline-none focus:ring-2 focus:ring-zinc-800/50 focus:border-zinc-650 transition-all duration-205 text-sm bg-zinc-950/20"
               value={dueDate}
               onChange={(e) => setDueDate(e.target.value)}
             />
           </div>
 
           {/* Actions Footer */}
-          <div className="flex justify-end gap-3 pt-4 border-t border-white/5 mt-6">
+          <div className="flex justify-end gap-3 pt-4 border-t border-zinc-900 mt-6">
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-white font-medium text-sm transition-all duration-200"
+              className="px-4 py-2 rounded-xl bg-zinc-900 hover:bg-zinc-850 border border-zinc-800 text-zinc-300 font-semibold text-sm transition-all duration-200"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="px-5 py-2 bg-indigo-600 hover:bg-indigo-500 text-white font-medium text-sm rounded-xl shadow-lg shadow-indigo-600/10 hover:shadow-indigo-500/25 transition-all duration-200"
+              className="px-5 py-2 bg-white hover:bg-zinc-200 text-black font-bold text-sm rounded-xl transition-all duration-200"
             >
               {task ? 'Save Changes' : 'Create Task'}
             </button>

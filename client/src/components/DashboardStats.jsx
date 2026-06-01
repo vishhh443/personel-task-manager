@@ -25,31 +25,27 @@ export default function DashboardStats() {
       title: 'Total Tasks',
       value: total,
       icon: ClipboardList,
-      colorClass: 'text-indigo-400 bg-indigo-500/10 border-indigo-500/20',
-      radialClass: 'from-indigo-500/20 to-transparent',
+      colorClass: 'text-zinc-100 bg-zinc-900 border-zinc-800',
     },
     {
       title: 'Active Tasks',
       value: active,
       icon: Play,
-      colorClass: 'text-amber-400 bg-amber-500/10 border-amber-500/20',
-      radialClass: 'from-amber-500/20 to-transparent',
+      colorClass: 'text-zinc-300 bg-zinc-900 border-zinc-800',
     },
     {
       title: 'Completed',
       value: completed,
       icon: CheckCircle2,
-      colorClass: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20',
-      radialClass: 'from-emerald-500/20 to-transparent',
+      colorClass: 'text-white bg-zinc-900 border-zinc-800',
     },
     {
       title: 'Overdue',
       value: overdue,
       icon: AlertTriangle,
       colorClass: overdue > 0 
-        ? 'text-rose-400 bg-rose-500/10 border-rose-500/30' 
-        : 'text-gray-400 bg-gray-500/5 border-gray-500/10',
-      radialClass: overdue > 0 ? 'from-rose-500/20 to-transparent' : 'from-gray-500/10 to-transparent',
+        ? 'text-white bg-zinc-900 border-zinc-700 font-bold' 
+        : 'text-zinc-500 bg-zinc-900 border-zinc-850',
     },
   ];
 
@@ -60,15 +56,12 @@ export default function DashboardStats() {
         return (
           <div
             key={i}
-            className={`glass-panel rounded-2xl p-5 border relative overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-white/20`}
+            className="glass-panel rounded-2xl p-5 border relative overflow-hidden transition-all duration-300 hover:border-zinc-700"
             role="status"
             aria-live="polite"
           >
-            {/* Ambient radial lighting inside cards */}
-            <div className={`absolute -right-10 -bottom-10 w-28 h-28 rounded-full bg-radial ${stat.radialClass} blur-xl pointer-events-none`} />
-
             <div className="flex items-center justify-between mb-3 relative z-10">
-              <span className="text-gray-400 text-xs md:text-sm font-medium tracking-wide uppercase">
+              <span className="text-zinc-400 text-xs md:text-sm font-medium tracking-wide uppercase">
                 {stat.title}
               </span>
               <div className={`p-2 rounded-xl border ${stat.colorClass}`}>

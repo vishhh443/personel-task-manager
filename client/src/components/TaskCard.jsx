@@ -55,21 +55,21 @@ export default function TaskCard({ task, onEditClick, onDeleteClick }) {
     <div
       ref={setNodeRef}
       style={style}
-      className={`group glass-panel rounded-2xl p-5 border relative overflow-hidden transition-all duration-300 ${
+      className={`group glass-panel rounded-2xl p-5 border relative overflow-hidden transition-all duration-200 ${
         task.completed
-          ? 'border-emerald-500/25 bg-emerald-950/5'
+          ? 'border-zinc-800/85 bg-zinc-950/20 opacity-70'
           : isOverdue
-          ? 'border-rose-500/35 bg-rose-950/10 shadow-lg shadow-rose-950/10'
-          : 'border-white/5 bg-slate-900/40 hover:border-indigo-500/30'
+          ? 'border-zinc-500 bg-zinc-900/60'
+          : 'border-zinc-800 bg-zinc-900/35 hover:border-zinc-600'
       }`}
       aria-label={`Task: ${task.title}`}
     >
       {/* Visual background indicators */}
       {isOverdue && (
-        <div className="absolute top-0 left-0 w-1 h-full bg-rose-500 pointer-events-none" />
+        <div className="absolute top-0 left-0 w-1 h-full bg-white pointer-events-none" />
       )}
       {task.completed && (
-        <div className="absolute top-0 left-0 w-1 h-full bg-emerald-500 pointer-events-none" />
+        <div className="absolute top-0 left-0 w-1 h-full bg-zinc-750 pointer-events-none" />
       )}
 
       <div className="flex items-start gap-3">
@@ -77,7 +77,7 @@ export default function TaskCard({ task, onEditClick, onDeleteClick }) {
         <div
           {...attributes}
           {...listeners}
-          className="p-1 rounded text-gray-500 hover:text-white cursor-grab active:cursor-grabbing hover:bg-white/5 transition-all duration-200"
+          className="p-1 rounded text-zinc-650 hover:text-white cursor-grab active:cursor-grabbing hover:bg-zinc-850 transition-all duration-200"
           title="Drag to reorder"
           aria-label="Drag handle to reorder task"
         >
@@ -94,7 +94,7 @@ export default function TaskCard({ task, onEditClick, onDeleteClick }) {
               onChange={() => toggleTaskStatus(task.id)}
             />
             {/* Animated outer background switch */}
-            <div className="w-10 h-6 bg-slate-800 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-gray-300 after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-emerald-600 peer-checked:after:bg-white peer-checked:after:border-white transition-all duration-300" />
+            <div className="w-10 h-6 bg-zinc-800 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-zinc-400 after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-white peer-checked:after:bg-black transition-all duration-300" />
           </label>
         </div>
 
@@ -103,7 +103,7 @@ export default function TaskCard({ task, onEditClick, onDeleteClick }) {
           <div className="flex flex-wrap items-center gap-2 mb-1.5">
             <h4
               className={`text-base font-semibold text-white truncate transition-all duration-300 ${
-                task.completed ? 'line-through text-gray-500 decoration-gray-600' : ''
+                task.completed ? 'line-through text-zinc-600 decoration-zinc-700' : ''
               }`}
             >
               {task.title}
@@ -111,17 +111,17 @@ export default function TaskCard({ task, onEditClick, onDeleteClick }) {
 
             {/* Badges */}
             {task.completed ? (
-              <span className="flex items-center gap-1 text-[10px] font-bold bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded-full uppercase tracking-wider">
+              <span className="flex items-center gap-1 text-[10px] font-bold bg-zinc-900 border border-zinc-800 text-zinc-400 px-2 py-0.5 rounded-full uppercase tracking-wider">
                 <CheckCircle2 size={10} />
                 <span>Completed</span>
               </span>
             ) : isOverdue ? (
-              <span className="flex items-center gap-1 text-[10px] font-bold bg-rose-500/10 border border-rose-500/30 text-rose-400 px-2 py-0.5 rounded-full uppercase tracking-wider animate-pulse">
+              <span className="flex items-center gap-1 text-[10px] font-bold bg-zinc-800 border border-zinc-700 text-white px-2 py-0.5 rounded-full uppercase tracking-wider">
                 <AlertCircle size={10} />
                 <span>Overdue</span>
               </span>
             ) : (
-              <span className="text-[10px] font-bold bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 px-2 py-0.5 rounded-full uppercase tracking-wider">
+              <span className="text-[10px] font-bold bg-zinc-900 border border-zinc-800 text-zinc-400 px-2 py-0.5 rounded-full uppercase tracking-wider">
                 Active
               </span>
             )}
@@ -130,8 +130,8 @@ export default function TaskCard({ task, onEditClick, onDeleteClick }) {
           {/* Description */}
           {task.description && (
             <p
-              className={`text-sm text-gray-400 mb-4 line-clamp-2 leading-relaxed transition-all duration-300 ${
-                task.completed ? 'text-gray-600' : ''
+              className={`text-sm text-zinc-400 mb-4 line-clamp-2 leading-relaxed transition-all duration-300 ${
+                task.completed ? 'text-zinc-600' : ''
               }`}
             >
               {task.description}
@@ -139,7 +139,7 @@ export default function TaskCard({ task, onEditClick, onDeleteClick }) {
           )}
 
           {/* Metadata Footer */}
-          <div className="flex flex-wrap gap-x-4 gap-y-1.5 text-xs text-gray-500">
+          <div className="flex flex-wrap gap-x-4 gap-y-1.5 text-xs text-zinc-500">
             <span className="flex items-center gap-1" title={`Created on ${createdDate}`}>
               <Clock size={12} />
               <span>Created {createdDate}</span>
@@ -148,7 +148,7 @@ export default function TaskCard({ task, onEditClick, onDeleteClick }) {
             {task.dueDate && (
               <span
                 className={`flex items-center gap-1 ${
-                  isOverdue ? 'text-rose-400 font-medium' : ''
+                  isOverdue ? 'text-white font-semibold' : ''
                 }`}
                 title={`Due by ${formatDate(task.dueDate)}`}
               >
@@ -164,7 +164,7 @@ export default function TaskCard({ task, onEditClick, onDeleteClick }) {
           <button
             type="button"
             onClick={() => onEditClick(task)}
-            className="p-2 rounded-xl text-gray-400 hover:text-indigo-400 hover:bg-indigo-500/10 border border-transparent hover:border-indigo-500/10 transition-all duration-200"
+            className="p-2 rounded-xl text-zinc-500 hover:text-white hover:bg-zinc-800 border border-transparent transition-all duration-205"
             title="Edit task"
             aria-label={`Edit task: ${task.title}`}
           >
@@ -173,7 +173,7 @@ export default function TaskCard({ task, onEditClick, onDeleteClick }) {
           <button
             type="button"
             onClick={() => onDeleteClick(task.id)}
-            className="p-2 rounded-xl text-gray-400 hover:text-rose-400 hover:bg-rose-500/10 border border-transparent hover:border-rose-500/10 transition-all duration-200"
+            className="p-2 rounded-xl text-zinc-500 hover:text-white hover:bg-zinc-850 border border-transparent transition-all duration-205"
             title="Delete task"
             aria-label={`Delete task: ${task.title}`}
           >

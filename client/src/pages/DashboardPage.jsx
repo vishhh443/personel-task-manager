@@ -48,25 +48,21 @@ export default function DashboardPage() {
 
   return (
     <div className="w-full min-h-screen px-4 md:px-8 py-8 md:py-12 max-w-6xl mx-auto flex flex-col gap-6 relative">
-      {/* Decorative background glow lights */}
-      <div className="absolute top-10 left-1/4 w-72 h-72 bg-indigo-500/10 rounded-full blur-3xl -z-10 pointer-events-none" />
-      <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl -z-10 pointer-events-none" />
-
       {/* Header Block */}
-      <header className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-white/5 relative z-10">
+      <header className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-zinc-800 relative z-10">
         <div className="flex items-center gap-3">
-          <div className="p-3 rounded-2xl bg-indigo-600/20 border border-indigo-500/30 text-indigo-400 shadow-inner">
-            <CheckSquare size={32} className="stroke-[2.25] animate-pulse" />
+          <div className="p-3 rounded-2xl bg-zinc-900 border border-zinc-800 text-white shadow-inner">
+            <CheckSquare size={32} className="stroke-[2.25]" />
           </div>
           <div>
             <h1 className="text-2xl md:text-3xl font-extrabold text-white tracking-tight flex items-center gap-2">
               <span>TaskFlow</span>
-              <span className="text-xs font-bold text-indigo-400 bg-indigo-500/10 border border-indigo-500/20 px-2 py-0.5 rounded-full uppercase tracking-wider flex items-center gap-1">
+              <span className="text-xs font-bold text-zinc-300 bg-zinc-850 border border-zinc-700 px-2 py-0.5 rounded-full uppercase tracking-wider flex items-center gap-1">
                 <Sparkles size={10} />
-                <span>Premium</span>
+                <span>Monochrome</span>
               </span>
             </h1>
-            <p className="text-gray-400 text-xs md:text-sm mt-0.5 font-medium">
+            <p className="text-zinc-400 text-xs md:text-sm mt-0.5 font-medium">
               Elegant personal task management engineered for focus.
             </p>
           </div>
@@ -75,7 +71,7 @@ export default function DashboardPage() {
         <button
           type="button"
           onClick={handleCreateClick}
-          className="flex items-center justify-center gap-2 px-5 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm rounded-xl shadow-lg shadow-indigo-600/20 transition-all duration-300 hover:shadow-indigo-500/35 hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-indigo-500/50"
+          className="flex items-center justify-center gap-2 px-5 py-3 bg-white hover:bg-zinc-200 text-black font-bold text-sm rounded-xl transition-all duration-200 active:scale-95 focus:outline-none focus:ring-2 focus:ring-zinc-500"
         >
           <Plus size={18} />
           <span>New Task</span>
@@ -88,7 +84,7 @@ export default function DashboardPage() {
       </section>
 
       {/* Controls Bar: Search & Tabs */}
-      <section aria-label="Task search and filters" className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 bg-slate-900/25 glass-panel p-4 rounded-2xl border border-white/5">
+      <section aria-label="Task search and filters" className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 bg-zinc-900/40 glass-panel p-4 rounded-2xl">
         <div className="flex-1 max-w-md">
           <SearchBar />
         </div>
