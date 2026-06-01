@@ -5,9 +5,9 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Resolve tasks.json path
+// Resolve tasks.json path (uses a test file in test mode to isolate data)
 const DATA_DIR = path.join(__dirname, '..', 'data');
-const DATA_FILE = path.join(DATA_DIR, 'tasks.json');
+const DATA_FILE = path.join(DATA_DIR, process.env.NODE_ENV === 'test' ? 'tasks.test.json' : 'tasks.json');
 
 // Helper to ensure data directory and file exist
 const initDataStore = () => {
