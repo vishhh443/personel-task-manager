@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "id": "bdb219bd-1787-4e94-907b-1459b56a7710",
+    "title": "nij",
+    "description": "dmomd",
+    "dueDate": "2026-07-01",
+    "completed": false,
+    "createdAt": "2026-06-01T12:16:45.715Z",
+    "updatedAt": "2026-06-01T12:16:45.715Z"
+  },
+  {
+    "id": "2f9bbf7a-83b9-4a33-82de-5e3a7eefed80",
+    "title": "task",
+    "description": "for students",
+    "dueDate": "2026-06-09",
+    "completed": false,
+    "createdAt": "2026-06-01T12:15:28.690Z",
+    "updatedAt": "2026-06-01T12:15:46.246Z"
+  }
+]
