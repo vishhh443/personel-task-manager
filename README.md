@@ -1,9 +1,6 @@
 # TaskFlow — Premium Personal Task Manager
 
 TaskFlow is a complete, production-quality Personal Task Manager application designed with modern glassmorphism design aesthetics, fluid animations, and robust backend engineering. Built using **React (Vite) + Tailwind CSS v4** on the frontend, and **Node.js + Express** on the backend, it delivers a highly tactile, fast, and accessible user experience combined with persistent JSON storage.
-
-This project strictly satisfies all core, should-have, and bonus requirements from the **Studio Graphene Full Stack Developer Assessment** and is engineered to maximize shortlisting chances.
-
 ---
 
 ## 🚀 Key Features
