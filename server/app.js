@@ -11,15 +11,19 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Enable CORS for our frontend client.
-const allowedOrigins = [
+const defaultOrigins = [
   'http://localhost:5173',
-  'http://127.0.0.1:5173',
-  'https://personel-task-manager-3.onrender.com'  // Deployed frontend
+  'http://127.0.0.1:5173'
 ];
+const envOrigins = process.env.ALLOWED_ORIGINS
+  ? process.env.ALLOWED_ORIGINS.split(',').map(origin => origin.trim()).filter(Boolean)
+  : [];
+const allowedOrigins = [...defaultOrigins, ...envOrigins];
+
 app.use(cors({
   origin: allowedOrigins,
   credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type']
 }));
 

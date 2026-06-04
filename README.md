@@ -168,10 +168,13 @@ npm run test
 ### Backend (Railway / Render)
 1. Commit the code to your GitHub repository.
 2. Link the repository to your hosting account (e.g. Render).
-3. Select **Web Service** and choose Node.js environment.
-4. Set the **Build Command** to: `npm install`
+3. If your repo is a monorepo, set the **Root Directory** to `server`.
+4. Select **Web Service** and choose Node.js environment.
+5. Set the **Build Command** to: `npm install`
 5. Set the **Start Command** to: `npm start`
-6. Add the Environment Variable: `NODE_ENV=production`
+6. Add the Environment Variables:
+   - `NODE_ENV=production`
+   - `ALLOWED_ORIGINS=https://your-frontend-domain.com` (comma-separated if multiple)
 7. Render/Railway will automatically expose a public server URL.
 
 ### Frontend (Vercel)
