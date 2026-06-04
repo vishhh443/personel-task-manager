@@ -6,7 +6,7 @@ import FilterTabs from '../components/FilterTabs';
 import TaskList from '../components/TaskList';
 import TaskModal from '../components/TaskModal';
 import ConfirmDialog from '../components/ConfirmDialog';
-import { Plus, CheckSquare, Sparkles } from 'lucide-react';
+import { Plus, CheckSquare } from 'lucide-react';
 
 export default function DashboardPage() {
   const { deleteTask } = useTasks();
@@ -55,12 +55,8 @@ export default function DashboardPage() {
             <CheckSquare size={32} className="stroke-[2.25]" />
           </div>
           <div>
-            <h1 className="text-2xl md:text-3xl font-extrabold text-white tracking-tight flex items-center gap-2">
-              <span>TaskFlow</span>
-              <span className="text-xs font-bold text-[#10B981] bg-[#10B981]/10 border border-[#10B981]/25 px-2 py-0.5 rounded-full uppercase tracking-wider flex items-center gap-1">
-                <Sparkles size={10} />
-                <span>Botanical Tech</span>
-              </span>
+            <h1 className="text-2xl md:text-3xl font-extrabold text-white tracking-tight">
+              TaskFlow
             </h1>
             <p className="text-zinc-400 text-xs md:text-sm mt-0.5 font-medium">
               Elegant personal task management engineered for focus.
