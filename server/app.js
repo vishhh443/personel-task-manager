@@ -22,6 +22,14 @@ app.use(express.json());
 // Task Routes
 app.use('/api/tasks', taskRoutes);
 
+// Root route for health check / quick API info
+app.get('/', (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: 'TaskFlow backend is running. Use /api/tasks to access the task API.'
+  });
+});
+
 // Not Found Route handler
 app.use((req, res, next) => {
   const error = new Error(`Not Found - ${req.originalUrl}`);
