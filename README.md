@@ -1,4 +1,4 @@
-# TaskFlow � Personal Task Manager
+# TaskFlow - Personal Task Manager
 
 A simple task manager with a React + Vite frontend and a Node.js + Express backend.
 
@@ -42,14 +42,14 @@ server/
 
 ### Frontend (`client/.env`)
 
-- `VITE_API_URL` � backend API URL
+- `VITE_API_URL` - backend API URL
   - default: `http://localhost:5000/api`
 
 ### Backend (`server/.env`)
 
-- `PORT` � server port (default `5000`)
-- `NODE_ENV` � `development`, `production`, or `test`
-- `ALLOWED_ORIGINS` � comma-separated frontend URLs allowed by CORS
+- `PORT` - server port (default `5000`)
+- `NODE_ENV` - `development`, `production`, or `test`
+- `ALLOWED_ORIGINS` - comma-separated frontend URLs allowed by CORS
 
 ## API endpoints
 
@@ -100,12 +100,6 @@ Open the app at `http://localhost:5173`.
 2. Root directory: `client`
 3. Set env var:
    - `VITE_API_URL=https://<your-backend-url>/api`
-
-## Connect frontend + backend on Render
-
-- If frontend is deployed at `https://personel-task-manager-3.onrender.com` and backend at `https://personel-task-manager-1.onrender.com`:
-  - Frontend `VITE_API_URL=https://personel-task-manager-1.onrender.com/api`
-  - Backend `ALLOWED_ORIGINS=https://personel-task-manager-3.onrender.com`
 
 ## Tests
 
