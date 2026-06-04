@@ -10,9 +10,11 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Enable CORS for our frontend client (standard and custom dev origins supported)
+// Enable CORS for our frontend client.
+// In development, allow localhost. In production, allow all origins so deployed frontend can reach the API.
+const allowedOrigins = ['http://localhost:5173', 'http://127.0.0.1:5173'];
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://127.0.0.1:5173'],
+  origin: process.env.NODE_ENV === 'production' ? true : allowedOrigins,
   credentials: true
 }));
 
