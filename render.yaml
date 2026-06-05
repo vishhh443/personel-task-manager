@@ -1,7 +1,0 @@
-services:
-  - type: web
-    name: taskflow-app
-    env: docker
-    branch: master
-    dockerfilePath: Dockerfile
-    autoDeploy: true
