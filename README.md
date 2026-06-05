@@ -1,6 +1,6 @@
 # TaskFlow - Personal Task Manager
 
-A Personal Task Manager web app built as part of the Studio Graphene Full Stack Developer Assessment exercise. The application includes a React + Vite frontend and a Node.js + Express backend, with drag-and-drop task reordering, task completion toggles, filtering, and file-based persistence.
+A Personal Task Manager web app built, FULL STACK WEB APPLICATION. The application includes a React + Vite frontend and a Node.js + Express backend, with drag-and-drop task reordering, task completion toggles, filtering, and file-based persistence.
 
 ## Live Demo Links
 
