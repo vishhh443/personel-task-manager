@@ -4,7 +4,7 @@ A Personal Task Manager web app built, FULL STACK WEB APPLICATION. The applicati
 
 ## Live Demo Links
 
-- Frontend: https://personel-task-manager-3.onrender.com
+- Frontend: https://personel-task-manager-3.onrender.com (you can view the live application here)
 - Backend API: https://personel-task-manager-1.onrender.com
 
 ## Tech Stack
