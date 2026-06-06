@@ -5,11 +5,11 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Resolve tasks.json path (uses a test file in test mode to isolate data)
+
 const DATA_DIR = path.join(__dirname, '..', 'data');
 const DATA_FILE = path.join(DATA_DIR, process.env.NODE_ENV === 'test' ? 'tasks.test.json' : 'tasks.json');
 
-// Helper to ensure data directory and file exist
+
 const initDataStore = () => {
   try {
     if (!fs.existsSync(DATA_DIR)) {
@@ -23,13 +23,10 @@ const initDataStore = () => {
   }
 };
 
-// Initialize on service load
+
 initDataStore();
 
-/**
- * Reads tasks from the tasks.json file.
- * Returns a parsed array of task objects.
- */
+
 export const readTasks = () => {
   try {
     initDataStore();
@@ -41,14 +38,11 @@ export const readTasks = () => {
   }
 };
 
-/**
- * Writes the task array back to the tasks.json file.
- * Kept atomic to avoid file corruption.
- */
+
 export const writeTasks = (tasks) => {
   try {
     initDataStore();
-    // Write to a temporary file first, then rename (atomic write pattern)
+   
     const tempFile = `${DATA_FILE}.tmp`;
     fs.writeFileSync(tempFile, JSON.stringify(tasks, null, 2), 'utf-8');
     fs.renameSync(tempFile, DATA_FILE);
