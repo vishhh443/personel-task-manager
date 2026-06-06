@@ -1,10 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 import { readTasks, writeTasks } from '../services/taskService.js';
 
-/**
- * GET /api/tasks
- * Fetch all tasks in current storage order (defaults to newest first upon creation).
- */
+
 export const getTasks = async (req, res, next) => {
   try {
     const tasks = readTasks();
@@ -17,10 +14,7 @@ export const getTasks = async (req, res, next) => {
   }
 };
 
-/**
- * POST /api/tasks
- * Create a new task. The new task is prepended to the array (sorting by newest first).
- */
+
 export const createTask = async (req, res, next) => {
   try {
     const { title, description, dueDate } = req.body;
@@ -36,7 +30,7 @@ export const createTask = async (req, res, next) => {
       updatedAt: new Date().toISOString()
     };
 
-    // Prepend to array to satisfy "sorted by newest first" by default
+   
     tasks.unshift(newTask);
     writeTasks(tasks);
 
@@ -49,10 +43,7 @@ export const createTask = async (req, res, next) => {
   }
 };
 
-/**
- * PUT /api/tasks/:id
- * Update title, description, and due date of an existing task.
- */
+
 export const updateTask = async (req, res, next) => {
   try {
     const { id } = req.params;
@@ -87,10 +78,7 @@ export const updateTask = async (req, res, next) => {
   }
 };
 
-/**
- * PATCH /api/tasks/:id/status
- * Toggle completion status of an existing task.
- */
+
 export const toggleStatus = async (req, res, next) => {
   try {
     const { id } = req.params;
@@ -122,10 +110,7 @@ export const toggleStatus = async (req, res, next) => {
   }
 };
 
-/**
- * DELETE /api/tasks/:id
- * Delete an existing task.
- */
+
 export const deleteTask = async (req, res, next) => {
   try {
     const { id } = req.params;
@@ -151,10 +136,7 @@ export const deleteTask = async (req, res, next) => {
   }
 };
 
-/**
- * PATCH /api/tasks/reorder
- * Reorder task list based on custom drag-and-drop order of IDs.
- */
+
 export const reorderTasks = async (req, res, next) => {
   try {
     const { taskIds } = req.body;
@@ -170,15 +152,15 @@ export const reorderTasks = async (req, res, next) => {
     const taskMap = new Map(tasks.map((t) => [t.id, t]));
     const reorderedTasks = [];
 
-    // Push tasks in requested order
+
     taskIds.forEach((id) => {
       if (taskMap.has(id)) {
         reorderedTasks.push(taskMap.get(id));
-        taskMap.delete(id); // remove to track remaining
+        taskMap.delete(id); 
       }
     });
 
-    // If any tasks were omitted from the array, append them to the end so they aren't lost
+  
     taskMap.forEach((task) => {
       reorderedTasks.push(task);
     });
