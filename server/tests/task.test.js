@@ -9,12 +9,12 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const TEST_FILE = path.join(__dirname, '..', 'data', 'tasks.test.json');
 
-// Force test environment
+
 process.env.NODE_ENV = 'test';
 
 describe('Task Manager API Integration Tests', () => {
   
-  // Clean start for each test
+
   beforeEach(() => {
     try {
       fs.writeFileSync(TEST_FILE, JSON.stringify([], null, 2), 'utf-8');
@@ -23,7 +23,7 @@ describe('Task Manager API Integration Tests', () => {
     }
   });
 
-  // Clean up completely after tests run
+ 
   afterAll(() => {
     try {
       if (fs.existsSync(TEST_FILE)) {
@@ -92,13 +92,13 @@ describe('Task Manager API Integration Tests', () => {
 
   describe('PUT /api/tasks/:id', () => {
     it('should update task details successfully', async () => {
-      // 1. Create a task
+      
       const createRes = await request(app)
         .post('/api/tasks')
         .send({ title: 'Original Title', description: 'Original description' });
       const taskId = createRes.body.data.id;
 
-      // 2. Update it
+     
       const response = await request(app)
         .put(`/api/tasks/${taskId}`)
         .send({
@@ -129,12 +129,12 @@ describe('Task Manager API Integration Tests', () => {
       const createRes = await request(app).post('/api/tasks').send({ title: 'Test status toggle' });
       const taskId = createRes.body.data.id;
 
-      // Toggle to Completed
+      
       const resToggle1 = await request(app).patch(`/api/tasks/${taskId}/status`);
       expect(resToggle1.status).toBe(200);
       expect(resToggle1.body.data.completed).toBe(true);
 
-      // Toggle back to Active
+
       const resToggle2 = await request(app).patch(`/api/tasks/${taskId}/status`);
       expect(resToggle2.status).toBe(200);
       expect(resToggle2.body.data.completed).toBe(false);
@@ -162,7 +162,7 @@ describe('Task Manager API Integration Tests', () => {
       const id1 = t1.body.data.id;
       const id2 = t2.body.data.id;
 
-      // Current array order: [Task 2 (id2), Task 1 (id1)] due to prepend unshift
+     
       const reorderRes = await request(app)
         .patch('/api/tasks/reorder')
         .send({ taskIds: [id1, id2] }); // Reverse the order
